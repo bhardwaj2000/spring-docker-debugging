@@ -10,5 +10,12 @@ pipeline {
                 bat 'mvn clean install'
             }
         }
+        stage('Build Docker images'){
+            steps{
+                script{
+                    bat 'docker build -t manish172000/spring-docker-debugging .'
+                }
+            }
+        }
     }
 }
